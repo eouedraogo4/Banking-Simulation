@@ -2,8 +2,6 @@
 
 本文档对实验中遇到的文件进行说明并给出使用说明
 
-[TOC]
-
 ## 使用说明
 
 可使用git下载本仓库
@@ -139,9 +137,6 @@ leave_flow是所有正在办理业务的客户的优先队列，根据客户离�
 问：为什么在 simulation.cc 里用 queue.data 会报错？
 
 答：排队模拟是应用层的，而 queue.data 是抽象的数据结构层的，已被设置为private。它们之间的交互请使用我们提供的函数。计算机科学很重要的一个思想就是抽象。不然，程序员就该操作物理层电子的流动了。
-
-![image-20201017171309150](C:\Users\User\AppData\Roaming\Typora\typora-user-images\image-20201017171309150.png)
-
 
 
 ## 附录
