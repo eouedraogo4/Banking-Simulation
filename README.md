@@ -98,7 +98,7 @@ util中是与排队模拟相关的工具函数。
 1. queue 和 priority queue 最大的不同点在于：queue 要求先进入队列的元素最先出来，而 priority queue 要求把在队列数据中最小的元素放入队头，让其成为最先出来的元素。
 2. 两个数据结构中的 data 域是存放数据的数组， capacity 域表示队列能容纳的最大元素个数。由于队空和队满之间存在 capacity + 1 种状态，data 也需要分配 capacity + 1 的容量以区分。
 3. queue 的 front 指向队头元素，而 rear 指向下一个元素插入的位置。
-4. priority queue 的实现：数据只能存放在 data[1] 和 data[rear] 之间，data[1] 一定是优先队列中元素最小的，且满足 data[i/2] < data[i] (i > 1)。元素入队时，放入队列末尾，判断是否满足 data[i/2] < data[i]。若满足可返回；若不满足则交换 data[i/2] 和 data[i] 的位置，继续判断交换直到满足条件。例如，在原来有4个元素的优先队列中，插入比原队列元素都要小的元素，则会发生交换 data[5] <-> data[2], data[2] <-> data[1]。元素出队时，取出对头元素，将队尾元素放入队头位置 data[1]，从 data[1] 处开始判断 data[i/2] < data[i] 这一条件。（注意：满足 j/2 = i 的 j 有 2*i 和 2*i+1，操作的时间复杂度应该为 O(lgn) ）
+4. priority queue 的实现：数据只能存放在 data[1] 和 data[rear] 之间，data[1] 一定是优先队列中元素最小的，且满足 data[i/2] < data[i] (i > 1)。元素入队时，放入队列末尾，判断是否满足 data[i/2] < data[i]。若满足可返回；若不满足则交换 data[i/2] 和 data[i] 的位置，继续判断交换直到满足条件。例如，在原来有4个元素的优先队列中，插入比原队列元素都要小的元素，则会发生交换 data[5] <-> data[2], data[2] <-> data[1]。元素出队时，取出对头元素，将队尾元素放入队头位置 data[1]，从 data[1] 处开始判断 data[i/2] < data[i] 这一条件。（注意：满足 j/2 = i 的 j 有 2i 和 2i+1，操作的时间复杂度应该为 O(lgn) ）
 
 5. 为了通用性，priority queue 需要比较元素大小的函数指针 cmp。cmp(a, b) > 0 表示 a > b。
 
