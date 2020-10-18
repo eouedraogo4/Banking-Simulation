@@ -7,7 +7,7 @@
 **本次实验只需填写 queue.h，priority_queue.h 和 simulation.cc 的 TODO 部分。填写所需要的 C++ 特性只有：**
 
 **1. 课本上所讲过的传引用。**
-**2. simulation.cc 中调用数据结构函数时，加上类型以区别，如 Queue<Customer>::empty 。**
+**2. simulation.cc 中调用数据结构函数时，加上类型以区别，如 `Queue<Customer>::empty` 。**
 
 ## 使用说明
 
@@ -37,8 +37,10 @@ sudo apt-get install cmake
 编译完成后，你可以进入build目录下，对某一个测试单独进行运行。
 
 ```bash
-./test_queue
+./test_queue # 写好 queue.h 即可测试
+./test_priority_queue # 写好 priority_queue.h 即可测试
 valgrind ./test_memory
+./test_simulation
 ```
 
 
